@@ -10,10 +10,12 @@ public class WebCrawler {
         HtmlCrawlerServiceJsoup crawler = new HtmlCrawlerServiceJsoup();
 
         String searchedId = "make-everything-ok-button";
-
-        System.out.println(crawler.getPathToIdOriginal(inputOriginFilePath, searchedId));
-        System.out.println(crawler.getElementByPath(inputOtherSampleFilePath));
-
+        if(args.length == 2) {
+            System.out.println(crawler.getPathToIdOriginal(inputOriginFilePath, searchedId));
+            System.out.println(crawler.getElementByPath(inputOtherSampleFilePath));
+        } else {
+            System.out.println("program expects 2 arguments");
+        }
 
     }
 }
